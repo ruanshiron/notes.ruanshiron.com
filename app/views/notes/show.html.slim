@@ -1,0 +1,7 @@
+.text-center
+  = link_to "Edit this note", edit_note_path(@note)
+= render @note
+.danger-zone.text-end
+  span
+    | Feel bored?
+  = button_to "Destroy this note", @note, method: :delete, form: { data: { turbo_confirm: "Are your sure to destroy this note?" } }
