@@ -10,7 +10,7 @@
     = form.date_field :published_on
   .field
     = form.label :body, style: "display: block"
-    = form.text_area :body
+    = form.text_area :body, data: { controller: 'textarea' }
     - form.object.errors.full_messages_for(:title).each do |message|
       .invalid-feedback
         = message

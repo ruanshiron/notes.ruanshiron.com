@@ -3,7 +3,7 @@ class ImagesController < ApplicationController
     @image = Image.new(attachment: params[:file])
 
     if @image.save
-      render :create, status: :created
+      render json: { url: rails_blob_url(@image.attachment) }, status: :created
     else
       render json: @image.errors, status: :unprocessable_entity
     end
