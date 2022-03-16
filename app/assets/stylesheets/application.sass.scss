@@ -34,7 +34,7 @@ body {
 
 .danger-zone {
   margin-top: 2rem;
-  border: dashed 1px red;
+  border: dashed 1px #dc322f;
   padding: 0.75rem;
   border-radius: 0.25rem;
   display: flex;
@@ -43,11 +43,11 @@ body {
 
 .field_with_errors input,
 .field_with_errors textarea {
-  border: solid 1px red;
+  border: solid 1px #dc322f;
 }
 
 .invalid-feedback {
-  color: red;
+  color: #dc322f;
   font-size: small;
 }
 
@@ -97,4 +97,9 @@ button {
 
 .note {
   margin-bottom: 4rem;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem 0 1rem 0;
 }
