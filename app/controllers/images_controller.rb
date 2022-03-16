@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ImagesController < ApplicationController
   def create
     @image = Image.new(attachment: params[:file])
