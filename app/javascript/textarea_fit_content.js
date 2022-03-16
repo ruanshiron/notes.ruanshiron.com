@@ -1,3 +1,5 @@
+import TextareaMarkdown from "textarea-markdown"
+
 document.addEventListener("turbo:load", function () {
   const textareas = document.getElementsByTagName("textarea")
 
@@ -15,4 +17,17 @@ document.addEventListener("turbo:load", function () {
       false
     )
   }
+
+  const token = document.querySelector("meta[name=\"csrf-token\"]").content;
+  const textarea = document.querySelector('#note_body');
+ 
+  new TextareaMarkdown(textarea, {
+    endPoint: '/api/image',
+    paramName: 'file',
+    responseKey: 'url',
+    csrfToken: token,
+    placeholder: 'uploading %filename ...'
+  })
+
+  console.log(TextareaMarkdown);
 })
