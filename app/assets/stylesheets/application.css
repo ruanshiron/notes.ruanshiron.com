@@ -19,3 +19,29 @@
   margin: 0 auto;
   padding: 0 0.5rem;
 }
+
+.text-center {
+  text-align: center;
+}
+
+.text-end {
+  text-align: right;
+}
+
+.danger-zone {
+  margin-top: 2rem;
+  border: dashed 1px red;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.field_with_errors input, textarea {
+  border: solid 1px red;
+}
+
+.invalid-feedback {
+  color: red;
+  font-size: small;
+}

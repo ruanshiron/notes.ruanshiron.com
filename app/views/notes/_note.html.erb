@@ -1,17 +1,15 @@
 <div id="<%= dom_id note %>">
-  <p>
-    <strong>Title:</strong>
-    <%= note.title %>
-  </p>
+  <%= link_to note do %>
+    <h2>
+      <%= note.title %>
+    </h2>
+  <% end %>
 
   <p>
-    <strong>Body:</strong>
-    <%= note.body %>
-  </p>
-
-  <p>
-    <strong>Published on:</strong>
     <%= note.published_on %>
   </p>
 
+  <p>
+    <%= note.body %>
+  </p>
 </div>
