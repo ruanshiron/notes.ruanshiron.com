@@ -10,6 +10,7 @@ html
     = javascript_include_tag 'application', 'data-turbo-track': 'reload', defer: true
   body
     .container
+      = render "lumos"
       = render "header"
       = render "flash"
       = yield
