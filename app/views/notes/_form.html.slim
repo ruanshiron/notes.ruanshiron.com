@@ -1,18 +1,18 @@
 = form_with(model: note) do |form|
-  div
+  .field
     = form.label :title, style: "display: block"
     = form.text_field :title
     - form.object.errors.full_messages_for(:title).each do |message|
       .invalid-feedback
         = message
-  div
+  .field
     = form.label :published_on, style: "display: block"
     = form.date_field :published_on
-  div
+  .field
     = form.label :body, style: "display: block"
     = form.text_area :body
     - form.object.errors.full_messages_for(:title).each do |message|
       .invalid-feedback
         = message
-  div
+  .field
     = form.submit
