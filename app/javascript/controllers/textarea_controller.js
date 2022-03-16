@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
+import autosize from "autosize"
 
 export default class extends Controller {
   connect() {
@@ -8,19 +9,7 @@ export default class extends Controller {
     this.responseKey = "url"
     this.placeholder = "uploading %filename ..."
 
-    this.element.setAttribute(
-      "style",
-      "height:" + this.element.scrollHeight + "px;overflow-y:hidden;"
-    )
-
-    this.element.addEventListener(
-      "input",
-      function () {
-        this.style.height = "auto"
-        this.style.height = this.scrollHeight + "px"
-      },
-      false
-    )
+    autosize(this.element)
 
     this.element.addEventListener("paste", (e) => this.paste(e))
     this.element.addEventListener("drop", (e) => this.drop(e))
@@ -46,7 +35,7 @@ export default class extends Controller {
   upload(file) {
     const reader = new FileReader()
     reader.readAsText(file)
-    reader.onload = (event) => {
+    reader.onload = (_event) => {
       const text =
         "![" + this.placeholder.replace(/\%filename/, file.name) + "]()"
 
@@ -79,6 +68,7 @@ export default class extends Controller {
             text,
             `![${file.name}](${url})\n`
           )
+          autosize(this.element)
         })
         .catch((error) => {
           this.element.value = this.element.value.replace(text, "")

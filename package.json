@@ -4,6 +4,7 @@
   "dependencies": {
     "@hotwired/stimulus": "^3.0.1",
     "@hotwired/turbo-rails": "^7.1.1",
+    "autosize": "^5.0.1",
     "esbuild": "^0.14.27",
     "sass": "^1.49.9",
     "whatwg-fetch": "^3.6.2"
