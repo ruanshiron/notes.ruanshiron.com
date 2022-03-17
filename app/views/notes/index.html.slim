@@ -1,4 +1,5 @@
-= link_to "New note", new_note_path
+- if user_signed_in?
+  = link_to "New note", new_note_path
 #drafts
   = render @drafts
 #notes

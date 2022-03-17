@@ -6,3 +6,11 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+admin_email = ENV['ADMIN_EMAIL'] || 'admin@example.com'
+admin_password = ENV['ADMIN_PASSWORD'] || 'password'
+
+User.find_or_create_by email: admin_email do |admin|
+  admin.password = admin_password
+  admin.password_confirmation = admin_password
+end
