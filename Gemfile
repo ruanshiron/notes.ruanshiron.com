@@ -84,3 +84,5 @@ gem 'kramdown-parser-gfm', '~> 1.1'
 gem 'cssbundling-rails', '~> 1.1'
 
 gem 'jsbundling-rails'
+
+gem 'devise'
