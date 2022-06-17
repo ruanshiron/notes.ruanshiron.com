@@ -10,6 +10,6 @@ class Note < ApplicationRecord
   end
 
   def body_to_html
-    Kramdown::Document.new(body).to_html
+    Kramdown::Document.new(body, input: 'GFM').to_html
   end
 end
